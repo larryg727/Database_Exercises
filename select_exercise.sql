@@ -17,5 +17,5 @@ select 'Albums that had less than 20 million certified sales' as 'Description'\G
 select artist, name, sales from album where sales < '20';
 
 select 'Albums in the rock genre' as 'Desctiption'\G
-select artist, name, genre from album where genre = 'rock';
+select artist, name, genre from album where genre like '%rock%';
 

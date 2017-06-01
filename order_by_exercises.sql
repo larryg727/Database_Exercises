@@ -16,10 +16,12 @@ WHERE last_name LIKE 'E%'
 
 SELECT
   first_name,
-  last_name
+  last_name,
+  emp_no
 FROM employees
 WHERE last_name LIKE 'E%'
-      AND last_name LIKE '%e';
+      AND last_name LIKE '%e'
+ORDER BY emp_no;
 
 SELECT
   first_name,

@@ -6,13 +6,13 @@ WHERE (first_name = 'Irena'
        OR first_name = 'Maya')
 GROUP BY gender;
 
+
 SELECT concat(
   first_name,
     ' ',
   last_name)
 FROM employees
-WHERE last_name LIKE 'E%'
-      AND last_name LIKE '%e';
+WHERE last_name LIKE 'E%e';
 
 
 SELECT datediff(curdate(), hire_date),
@@ -33,4 +33,10 @@ FROM employees
 WHERE last_name LIKE '%q%'
       AND last_name NOT LIKE '%qu%'
 GROUP BY last_name, first_name
-ORDER BY count(last_name) DESC;;
+ORDER BY count(*) DESC;;
+
+
+SELECT concat(emp_no, ' - ', last_name, ', ', first_name) as first_name,
+  birth_date as DOB
+FROM employees
+LIMIT 10;

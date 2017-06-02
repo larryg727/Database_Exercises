@@ -26,9 +26,11 @@ WHERE hire_date LIKE '199%'
 ORDER BY birth_date ASC, hire_date DESC;
 
 
-SELECT
+SELECT count(last_name),
   first_name,
   last_name
 FROM employees
 WHERE last_name LIKE '%q%'
-      AND last_name NOT LIKE '%qu%';
+      AND last_name NOT LIKE '%qu%'
+GROUP BY last_name, first_name
+ORDER BY count(last_name) DESC;;

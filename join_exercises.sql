@@ -38,4 +38,17 @@ where dm.to_date > curdate()
 AND s.to_date > curdate()
 ORDER BY d.dept_name;
 
+SELECT
+  CONCAT(e.first_name, ' ', e.last_name) as 'Employee Name',
+  d.dept_name as 'Department Name',
+  concat(em.first_name, ' ', em.last_name) as 'Manager Name'
+FROM dept_emp as de
+LEFT JOIN employees as e on e.emp_no = de.emp_no
+LEFT JOIN departments as d on de.dept_no = d.dept_no
+  LEFT JOIN dept_manager as dm on de.dept_no = dm.dept_no
+  LEFT JOIN employees as em on dm.emp_no = em.emp_no
+WHERE de.to_date > curdate()
+and dm.to_date > curdate()
+ORDER BY d.dept_name;
+
 
